@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Filterable List</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+     ul li:nth-child(1){
+         background-color:azure;
+        
+     }
+     ul li:nth-child(5){
+         background-color:azure;
+        
+     }
+     ul li:nth-child(9){
+         background-color:azure;
+        
+     }
+    </style>
+</head>
+<body>
+    <div class="container">
+          <h2 class="pt-4">My Contacts</h2>
+              <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Search contact..." id="search">
+              </div>
+            <ul class="navbar-nav" id="names">
+                <li class="p-3">A</li>
+                <li class="nav-item"><a href="" class="nav-link">amit</a></li>
+                <li class="nav-item"><a href="" class="nav-link">ajay</a></li>
+                <li class="nav-item"><a href="" class="nav-link">ankit</a></li>
+
+                <li class="p-3">B</li>
+                <li class="nav-item"><a href="" class="nav-link">ball</a></li>
+                <li class="nav-item"><a href="" class="nav-link">bower</a></li>
+                <li class="nav-item"><a href="" class="nav-link">bicycle</a></li>
+
+                <li class="p-3">C</li>
+                <li class="nav-item"><a href="" class="nav-link">cat</a></li>
+                <li class="nav-item"><a href="" class="nav-link">cry</a></li>
+                <li class="nav-item"><a href="" class="nav-link">citrus</a></li>
+            </ul>
+    </div>
+<script>
+
+   var filterItem = document.getElementById('search');
+   
+   
+
+
+   filterItem.addEventListener('keyup',filterme);
+
+       
+  
+   function filterme(){
+
+    var v = filterItem.value;
+  
+        var ul = document.getElementById('names');
+
+           var li = ul.querySelectorAll('li.nav-item');
+
+          
+           for(var i=0;i < li.length; i++){
+           
+                 var a = li[i].getElementsByTagName('a')[0];
+
+                
+                 
+                    if(a.innerHTML.indexOf(v)> -1){
+
+                         li[i].style.display = "";
+
+                    }else{
+                        li[i].style.display = "none";
+                    }
+
+           }
+
+   }
+
+
+</script>    
+</body>
+</html>
